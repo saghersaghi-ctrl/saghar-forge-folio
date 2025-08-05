@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import PortfolioModal from "@/components/PortfolioModal";
 import ContactForm from "@/components/ContactForm";
+import TypingAnimation from "@/components/TypingAnimation";
 import { portfolioItems, PortfolioItem } from "@/data/portfolioData";
 import heroBg from "@/assets/hero-bg.jpg";
 import { 
@@ -66,33 +67,38 @@ const Index = () => {
         </div>
         
         {/* Main Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="slide-in-left">
-            <div className="mb-8">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight glow-effect">
-                <span className="block text-gradient-modern">Engr. Saghar Ali</span>
-                <span className="block text-white">Rabbani</span>
+            <div className="mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight glow-effect">
+                <span className="block text-gradient-modern">Engr. Saghar Ali Rabbani</span>
               </h1>
             </div>
             
-            <div className="mb-6 slide-in-right" style={{ animationDelay: '0.3s' }}>
-              <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md rounded-full px-8 py-4 border border-white/20">
-                <div className="w-3 h-3 bg-modern-accent rounded-full animate-pulse"></div>
-                <p className="text-xl md:text-2xl font-medium text-white/90">
-                  Mechanical Engineer | Product Designer | CAD Professional
-                </p>
-              </div>
+            <div className="mb-4 slide-in-right" style={{ animationDelay: '0.3s' }}>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-2">
+                Mechanical Engineer & Certified Product Designer
+              </h2>
             </div>
             
-            <div className="mb-12 slide-in-left" style={{ animationDelay: '0.6s' }}>
-              <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white/80 font-light">
-                Transform your <span className="text-modern-accent font-semibold">brilliant product ideas</span> into 
-                production-ready designs with <span className="text-modern-cyan font-semibold">engineering precision</span> and 
-                <span className="text-modern-purple font-semibold">real-world feasibility</span>
+            <div className="mb-8 slide-in-left" style={{ animationDelay: '0.6s' }}>
+              <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-white/80 font-light">
+                Helping you transform technical ideas into production-ready, manufacturable products.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center slide-in-right" style={{ animationDelay: '0.9s' }}>
+            {/* Typing Animation */}
+            <div className="mb-12 slide-in-right" style={{ animationDelay: '0.9s' }}>
+              <div className="flex items-center justify-center gap-2 text-modern-accent text-lg font-medium">
+                <span className="text-white/70">Expert in:</span>
+                <TypingAnimation 
+                  words={['SolidWorks', 'AutoCAD', 'Fusion 360', 'CATIA', 'Inventor', 'ANSYS', 'KeyShot', 'Blender', 'MATLAB', 'Photoshop']}
+                  className="text-modern-accent"
+                />
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center slide-in-right" style={{ animationDelay: '1.2s' }}>
               <Button 
                 size="lg" 
                 className="btn-modern text-white text-lg px-10 py-4 rounded-full font-semibold shadow-2xl hover:scale-105 transition-all duration-300"
@@ -115,44 +121,17 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
-            <ArrowDown className="h-6 w-6 text-white/60" />
-          </div>
-        </div>
-        
-        {/* Floating Stats */}
-        <div className="absolute bottom-20 right-8 hidden lg:block">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-1">50+</div>
-              <div className="text-white/70 text-sm">Projects Completed</div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="absolute top-1/3 left-8 hidden lg:block">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-1">3+</div>
-              <div className="text-white/70 text-sm">Years Experience</div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* About Me Section */}
-      <section className="py-32 bg-gradient-to-br from-background to-muted/20" id="about">
+      <section className="py-20 bg-gradient-to-br from-background to-muted/20" id="about">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-20">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="h-4 w-4" />
               About Me
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">Engineering Excellence</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-modern">Engineering Excellence</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               With over 3 years of hands-on experience in mechanical and product design, 
               I bring together engineering precision, creative problem-solving, and real-world 
@@ -160,7 +139,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="card-modern scale-hover group">
               <CardContent className="pt-8 pb-8 text-center">
                 <div className="bg-gradient-to-br from-primary to-primary-glow p-4 rounded-2xl w-fit mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -205,159 +184,188 @@ const Index = () => {
       </section>
 
       {/* Professional Journey */}
-      <section className="py-32 relative overflow-hidden" id="journey">
+      <section className="py-20 relative overflow-hidden" id="journey">
         <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-muted/50"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-20">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Calendar className="h-4 w-4" />
                 Career Journey
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">Professional Path</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-modern">Professional Path</h2>
             </div>
             
-            <div className="space-y-6">
-              {[
-                {
-                  title: "Mechanical Design Engineer",
-                  company: "MECHESOL CO., UK",
-                  period: "Jul 2024–Present",
-                  icon: <MapPin className="h-6 w-6" />,
-                  gradient: "from-primary to-primary-glow"
-                },
-                {
-                  title: "Project Engineer", 
-                  company: "MECHESOL CO., Pakistan",
-                  period: "Jun 2023–Jun 2024",
-                  icon: <Cog className="h-6 w-6" />,
-                  gradient: "from-modern-purple to-modern-cyan"
-                },
-                {
-                  title: "Trainee Engineer",
-                  company: "MECHESOL CO.",
-                  period: "Apr–Jun 2023",
-                  icon: <Trophy className="h-6 w-6" />,
-                  gradient: "from-modern-cyan to-modern-accent"
-                },
-                {
-                  title: "Production Manager",
-                  company: "Gracewear Pvt. Ltd.",
-                  period: "Nov 2021–Present",
-                  icon: <Monitor className="h-6 w-6" />,
-                  gradient: "from-modern-accent to-primary"
-                },
-                {
-                  title: "Freelancer",
-                  company: "CAD Design Expert",
-                  period: "2021–Present",
-                  icon: <Zap className="h-6 w-6" />,
-                  gradient: "from-primary to-modern-purple"
-                }
-              ].map((job, index) => (
-                <Card key={index} className="card-modern scale-hover group">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-6">
-                      <div className={`bg-gradient-to-br ${job.gradient} p-4 rounded-2xl text-white group-hover:scale-110 transition-transform duration-300`}>
-                        {job.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-bold text-2xl text-foreground mb-2">{job.title}</h3>
-                        <p className="text-xl text-muted-foreground mb-3">{job.company}</p>
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-5 w-5" />
-                          <span className="font-medium">{job.period}</span>
-                        </div>
-                      </div>
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-modern-cyan to-modern-purple hidden md:block"></div>
+              
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "Mechanical Design Engineer",
+                    company: "MECHESOL CO. – Holborn, UK",
+                    period: "July 2024 – Present",
+                    achievements: [
+                      "Led reverse engineering and FEA for critical retainer-based products",
+                      "Supervised design customization and documentation for large-scale production"
+                    ],
+                    icon: <Wrench className="h-5 w-5" />,
+                    gradient: "from-primary to-primary-glow"
+                  },
+                  {
+                    title: "Project Engineer", 
+                    company: "MECHESOL CO. – Multan, Pakistan",
+                    period: "June 2023 – June 2024",
+                    achievements: [
+                      "Directed modeling, optimization & vendor communication",
+                      "Delivered validated engineering designs for multinational clients"
+                    ],
+                    icon: <Cog className="h-5 w-5" />,
+                    gradient: "from-modern-purple to-modern-cyan"
+                  },
+                  {
+                    title: "Trainee Engineer",
+                    company: "MECHESOL CO. – Multan, Pakistan",
+                    period: "April 2023 – June 2023",
+                    achievements: [
+                      "Assisted senior engineers in drafting & 3D modeling",
+                      "Supported documentation and design iteration for real projects"
+                    ],
+                    icon: <Trophy className="h-5 w-5" />,
+                    gradient: "from-modern-cyan to-modern-accent"
+                  },
+                  {
+                    title: "Production Manager",
+                    company: "Gracewear Pvt. Ltd. – Rawat Industrial Estate",
+                    period: "Nov 2021 – Present",
+                    achievements: [
+                      "Managed 20+ molding machines & supervised job scheduling",
+                      "Ensured QC, machine maintenance & process flow"
+                    ],
+                    icon: <Monitor className="h-5 w-5" />,
+                    gradient: "from-modern-accent to-primary"
+                  },
+                  {
+                    title: "Freelance Designer",
+                    company: "Remote",
+                    period: "2021 – Present",
+                    achievements: [
+                      "Completed 50+ international projects in CAD, design for manufacturing, and rendering",
+                      "Rated 5/5 on Fiverr with consistent client satisfaction"
+                    ],
+                    icon: <Zap className="h-5 w-5" />,
+                    gradient: "from-primary to-modern-purple"
+                  }
+                ].map((job, index) => (
+                  <div key={index} className="relative flex items-start gap-6 group">
+                    {/* Timeline Dot */}
+                    <div className={`relative z-10 bg-gradient-to-br ${job.gradient} p-3 rounded-full text-white shadow-lg group-hover:scale-110 transition-all duration-300 hidden md:flex items-center justify-center`}>
+                      {job.icon}
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    
+                    {/* Content Card */}
+                    <Card className="card-modern scale-hover flex-1 ml-0 md:ml-2">
+                      <CardContent className="p-6">
+                        <div className="mb-4">
+                          <h3 className="font-bold text-xl text-foreground mb-1">{job.title}</h3>
+                          <p className="text-lg text-muted-foreground mb-2">{job.company}</p>
+                          <div className="flex items-center gap-2 text-primary font-medium">
+                            <Calendar className="h-4 w-4" />
+                            <span className="text-sm">{job.period}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-2">
+                          {job.achievements.map((achievement, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <p className="text-muted-foreground text-sm leading-relaxed">{achievement}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-32" id="services">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
+      {/* What I Offer & Technical Expertise */}
+      <section className="py-20 relative overflow-hidden" id="services">
+        <div className="absolute inset-0 bg-gradient-subtle"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Wrench className="h-4 w-4" />
-                Services
+                Services & Expertise
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">What I Offer</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-modern">What I Offer & Technical Tools</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                "Product Design & Development",
-                "DFM / DFA Consulting", 
-                "3D CAD Modeling (SolidWorks, Fusion 360)",
-                "Reverse Engineering",
-                "CNC & Injection Molding Support",
-                "2D Drawings (GD&T per ASME)",
-                "Simulation (FEA, CFD – ANSYS)",
-                "Product Renders & Animations",
-                "Prototyping (FDM/SLA)",
-                "BOM & Engineering Documentation"
-              ].map((service, index) => (
-                <Card key={index} className="card-modern scale-hover group text-center">
-                  <CardContent className="p-8">
-                    <div className="bg-gradient-to-br from-primary/20 to-primary-glow/20 p-4 rounded-2xl w-fit mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Cog className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-lg text-foreground leading-relaxed">{service}</h3>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Software Expertise */}
-      <section className="py-32 relative overflow-hidden" id="software">
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-muted/50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-20">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Monitor className="h-4 w-4" />
-                Software
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* What I Offer */}
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-center text-foreground">What I Offer</h3>
+                <div className="space-y-4">
+                  {[
+                    { name: "3D CAD Modeling", icon: <Cog className="h-5 w-5" /> },
+                    { name: "Reverse Engineering", icon: <Wrench className="h-5 w-5" /> },
+                    { name: "Product Rendering & Animations", icon: <Monitor className="h-5 w-5" /> },
+                    { name: "DFMA Consulting", icon: <Target className="h-5 w-5" /> },
+                    { name: "Technical Drawings & GD&T", icon: <Calendar className="h-5 w-5" /> },
+                    { name: "Simulation (FEA/CFD)", icon: <Zap className="h-5 w-5" /> },
+                    { name: "Prototyping Support", icon: <Trophy className="h-5 w-5" /> }
+                  ].map((service, index) => (
+                    <Card key={index} className="card-modern scale-hover group">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-4">
+                          <div className="bg-gradient-to-br from-primary to-primary-glow p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
+                            {service.icon}
+                          </div>
+                          <h4 className="font-semibold text-foreground">{service.name}</h4>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">Technical Expertise</h2>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
-              {[
-                "SolidWorks", "AutoCAD", "CATIA", "Fusion 360", 
-                "Inventor", "ANSYS", "ABAQUS", "MATLAB",
-                "LabView", "KeyShot", "Blender", "Adobe Ai",
-                "Adobe PS", "Adobe Ae", "Adobe Pr", "PDM"
-              ].map((software, index) => (
-                <Card key={index} className="card-modern scale-hover group text-center p-4">
-                  <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {software}
-                  </div>
-                </Card>
-              ))}
+              
+              {/* Technical Tools */}
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-center text-foreground">Technical Tools I Use</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {[
+                    "SolidWorks", "Fusion 360", "AutoCAD", "Inventor", "CATIA",
+                    "KeyShot", "Blender", "ANSYS", "MATLAB", "Adobe Illustrator", "Photoshop"
+                  ].map((tool, index) => (
+                    <Card key={index} className="card-modern scale-hover group text-center p-4 hover:shadow-elegant">
+                      <div className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
+                        {tool}
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-32" id="portfolio">
+      <section className="py-20" id="portfolio">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Target className="h-4 w-4" />
                 Portfolio
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">Featured Projects</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-modern">⚙️ From Idea to Execution — My Recent Projects</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -390,49 +398,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Work With Me */}
-      <section className="py-32 relative overflow-hidden" id="why-me">
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-muted/50"></div>
+      {/* Why Work Together */}
+      <section className="py-20 relative overflow-hidden bg-modern-dark" id="why-me">
+        <div className="absolute inset-0 bg-gradient-to-br from-modern-dark to-modern-darker"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Users className="h-4 w-4" />
                 Why Choose Me
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient-modern">Why Work Together</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Why Work Together</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "30-Minute Free Consultation",
-                  description: "Let's discuss your project requirements and explore how we can bring your ideas to life.",
+                  title: "Collaborative Mindset",
+                  description: "I align closely with clients, incorporating feedback at every stage",
+                  icon: <Users className="h-6 w-6" />,
                   gradient: "from-primary to-primary-glow"
                 },
                 {
-                  title: "Industry + Freelance Experience", 
-                  description: "Combining corporate project management with entrepreneurial flexibility and creativity.",
+                  title: "Precision Engineering", 
+                  description: "Every design follows real-world feasibility and manufacturability principles",
+                  icon: <Wrench className="h-6 w-6" />,
                   gradient: "from-modern-purple to-modern-cyan"
                 },
                 {
-                  title: "On-Time Delivery",
-                  description: "Full documentation, real-time updates, and commitment to meeting your deadlines.",
+                  title: "Timely Delivery",
+                  description: "I work fast without compromising detail — always deadline-conscious",
+                  icon: <Calendar className="h-6 w-6" />,
                   gradient: "from-modern-cyan to-modern-accent"
-                },
-                {
-                  title: "Manufacturable Designs",
-                  description: "Focused on scalable, cost-efficient designs that can actually be produced in the real world.",
-                  gradient: "from-modern-accent to-primary"
                 }
               ].map((item, index) => (
-                <Card key={index} className="card-modern scale-hover group">
+                <Card key={index} className="bg-white/5 border-white/10 scale-hover group backdrop-blur-md">
                   <CardContent className="p-8 text-center">
                     <div className={`bg-gradient-to-br ${item.gradient} p-4 rounded-2xl w-fit mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <Trophy className="h-8 w-8 text-white" />
+                      {item.icon}
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-foreground">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
+                    <p className="text-white/70 leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
