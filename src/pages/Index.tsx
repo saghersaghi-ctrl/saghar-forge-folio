@@ -50,23 +50,21 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center hero-modern hero-geometric overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-          }}
-        />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-800"></div>
         
-        {/* Dark overlay for better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/85 to-slate-900/90"></div>
+        {/* Diffusing gradient overlays */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 via-transparent to-accent/20 opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent"></div>
+        </div>
         
         {/* Subtle animated elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/5 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-accent/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-accent/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-primary/8 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
         
         {/* Main Content */}
