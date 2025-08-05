@@ -7,7 +7,7 @@ import PortfolioModal from "@/components/PortfolioModal";
 import ContactForm from "@/components/ContactForm";
 import TypingAnimation from "@/components/TypingAnimation";
 import { portfolioItems, PortfolioItem } from "@/data/portfolioData";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg-professional.jpg";
 import { 
   ArrowDown, 
   Mail, 
