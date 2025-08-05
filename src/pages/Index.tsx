@@ -59,65 +59,99 @@ const Index = () => {
           }}
         />
         
-        {/* Animated Background Elements */}
+        {/* Dark overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/85 to-slate-900/90"></div>
+        
+        {/* Subtle animated elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-modern-blue/10 rounded-full blur-xl animate-pulse floating"></div>
-          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-modern-purple/10 rounded-full blur-xl animate-pulse floating" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-modern-cyan/10 rounded-full blur-xl animate-pulse floating" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/5 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-accent/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
         
         {/* Main Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div className="slide-in-left">
-            <div className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight glow-effect">
-                <span className="block text-gradient-modern">Engr. Saghar Ali Rabbani</span>
-              </h1>
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+          <div className="space-y-6 animate-fade-in">
+            {/* Greeting */}
+            <div className="text-lg md:text-xl text-slate-300 font-light tracking-wide">
+              Hi, I'm
             </div>
             
-            <div className="mb-4 slide-in-right" style={{ animationDelay: '0.3s' }}>
-              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-2">
-                Mechanical Engineer & Certified Product Designer
-              </h2>
-            </div>
+            {/* Name */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-accent">
+                Engr. Saghar Ali Rabbani
+              </span>
+            </h1>
             
-            <div className="mb-8 slide-in-left" style={{ animationDelay: '0.6s' }}>
-              <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-white/80 font-light">
-                Helping you transform technical ideas into production-ready, manufacturable products.
-              </p>
-            </div>
+            {/* Professional Title */}
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 max-w-3xl mx-auto">
+              Mechanical Engineer & Certified Product Designer
+            </h2>
+            
+            {/* Tagline */}
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-300 font-light">
+              Helping you transform technical ideas into production-ready, manufacturable products.
+            </p>
             
             {/* Typing Animation */}
-            <div className="mb-12 slide-in-right" style={{ animationDelay: '0.9s' }}>
-              <div className="flex items-center justify-center gap-2 text-modern-accent text-lg font-medium">
-                <span className="text-white/70">Expert in:</span>
+            <div className="py-4">
+              <div className="text-lg md:text-xl text-primary/90 font-medium min-h-[2rem]">
                 <TypingAnimation 
-                  words={['SolidWorks', 'AutoCAD', 'Fusion 360', 'CATIA', 'Inventor', 'ANSYS', 'KeyShot', 'Blender', 'MATLAB', 'Photoshop']}
-                  className="text-modern-accent"
+                  words={[
+                    '3D CAD Modeling',
+                    'Reverse Engineering', 
+                    'Product Rendering & Animations',
+                    'DFMA Consulting',
+                    'Technical Drawings & GD&T',
+                    'Simulation (FEA/CFD)',
+                    'Prototyping Support'
+                  ]}
+                  className="font-mono tracking-wide"
                 />
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center slide-in-right" style={{ animationDelay: '1.2s' }}>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button 
                 size="lg" 
-                className="btn-modern text-white text-lg px-10 py-4 rounded-full font-semibold shadow-2xl hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white text-lg px-8 py-4 rounded-full font-semibold shadow-2xl hover:scale-105 hover:shadow-primary/25 transition-all duration-300"
                 onClick={() => scrollToSection('portfolio')}
               >
-                <span className="relative z-10 flex items-center gap-3">
-                  Explore Projects
-                  <ArrowDown className="h-5 w-5" />
-                </span>
+                View Portfolio
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white hover:text-modern-dark text-lg px-10 py-4 rounded-full font-semibold backdrop-blur-md bg-white/10 hover:scale-105 transition-all duration-300"
+                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-lg px-8 py-4 rounded-full font-semibold backdrop-blur-sm hover:scale-105 transition-all duration-300"
                 onClick={() => scrollToSection('contact')}
               >
-                Let's Connect
-                <ChevronRight className="h-5 w-5 ml-2" />
+                Book a Free Consultation
               </Button>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-12 mt-8 border-t border-white/10 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">8+</div>
+                <div className="text-sm text-slate-400">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">150+</div>
+                <div className="text-sm text-slate-400">Projects Completed</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">100%</div>
+                <div className="text-sm text-slate-400">Satisfaction Rate</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
             </div>
           </div>
         </div>
