@@ -53,11 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				engineering: {
-					blue: 'hsl(var(--engineering-blue))',
-					light: 'hsl(var(--engineering-light))',
-					gray: 'hsl(var(--tech-gray))',
-					precision: 'hsl(var(--precision-blue))'
+				modern: {
+					dark: 'hsl(var(--modern-dark))',
+					darker: 'hsl(var(--modern-darker))',
+					blue: 'hsl(var(--modern-blue))',
+					cyan: 'hsl(var(--modern-cyan))',
+					purple: 'hsl(var(--modern-purple))',
+					accent: 'hsl(var(--modern-accent))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
